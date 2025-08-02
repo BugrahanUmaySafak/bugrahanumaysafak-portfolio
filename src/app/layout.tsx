@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import Header from "@/components/header/Header";
-import { ThemeProvider } from "@/components/provider/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata = {
   title: "My Portfolio",
