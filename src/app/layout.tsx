@@ -1,5 +1,6 @@
-import "@/app/globals.css";
-import { ThemeProvider } from "next-themes";
+import "@/styles/globals.css";
+import Header from "@/components/header/Header";
+import { ThemeProvider } from "@/components/provider/theme-provider";
 
 export const metadata = {
   title: "My Portfolio",
@@ -22,6 +23,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Header />
             {children}
           </ThemeProvider>
         </body>
