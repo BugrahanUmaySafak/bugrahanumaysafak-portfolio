@@ -1,11 +1,12 @@
-import "@/styles/globals.css";
-import Header from "@/components/header/Header";
-import { ThemeProvider } from "@/components/theme-provider";
+"use client";
 
-export const metadata = {
-  title: "My Portfolio",
-  description: "Personal portfolio",
-};
+import type React from "react";
+import { Inter } from "next/font/google";
+import "@/styles/globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/header/Header";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -13,21 +14,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </>
+    <html lang="tr" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="pt-20">{children}</main>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

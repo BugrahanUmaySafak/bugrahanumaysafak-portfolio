@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function ModeLanguage() {
-  const [language, setLanguage] = React.useState("EN");
+  const [, setLanguage] = React.useState("EN");
 
   return (
     <DropdownMenu>
