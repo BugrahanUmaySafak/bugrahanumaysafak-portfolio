@@ -1,5 +1,3 @@
-"use client";
-
 import type React from "react";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
@@ -23,7 +21,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="pt-20">{children}</main>
+          <main className="relative">{children}</main>
         </ThemeProvider>
       </body>
     </html>
