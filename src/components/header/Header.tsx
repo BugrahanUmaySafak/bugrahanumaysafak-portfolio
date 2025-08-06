@@ -6,6 +6,7 @@ import { Container } from "@/components/Container";
 import { ModeToggle } from "@/components/ModeToggle";
 import { ModeLanguage } from "@/components/ModeLanguage";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation"; // Import usePathname
 
 const navigationItems = [
   { label: "Projects", href: "/projects" },
@@ -16,7 +17,7 @@ const navigationItems = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const currentPath = "/";
+  const currentPath = usePathname(); // Use usePathname to get the current path
 
   return (
     <header className="bg-background/90 backdrop-blur-sm top-0 z-50 border-b h-20 sticky">
@@ -54,7 +55,6 @@ export default function Header() {
             <ModeToggle />
             <ModeLanguage />
           </div>
-
           <Button
             variant="ghost"
             size="icon"

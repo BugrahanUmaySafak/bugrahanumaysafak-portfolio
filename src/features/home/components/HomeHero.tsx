@@ -36,7 +36,6 @@ export function HomeHero() {
               </motion.span>
               , ben Umay
             </motion.h1>
-
             <motion.p
               className="text-muted-foreground text-lg md:text-xl max-w-lg"
               initial={{ opacity: 0, y: 20 }}
@@ -46,7 +45,6 @@ export function HomeHero() {
               Full Stack geliştirici, modern web teknolojileriyle uçtan uca
               çözümler üreten yazılım tutkunu.
             </motion.p>
-
             <motion.div
               className="flex gap-4 pt-4"
               initial={{ opacity: 0, y: 20 }}
@@ -61,7 +59,6 @@ export function HomeHero() {
               </button>
             </motion.div>
           </motion.div>
-
           <motion.div
             className="flex-1 flex justify-center md:justify-end items-center"
             initial={{ opacity: 0, x: 50 }}

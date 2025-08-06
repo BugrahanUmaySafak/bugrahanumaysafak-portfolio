@@ -1,9 +1,11 @@
 "use client";
+
 import type React from "react";
 import { Inter } from "next/font/google";
-import "@/styles/globals.css";
+import "@/styles/globals.css"; // Updated import path
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header/Header";
+import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +24,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="pt-20">{children}</main>
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
