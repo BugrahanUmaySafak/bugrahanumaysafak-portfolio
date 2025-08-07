@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/ui/button";
@@ -6,7 +7,11 @@ import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { techSections } from "@/data/technologies";
-import { fadeInLeftVariants, fadeInRightVariants } from "@/lib/framer-variants";
+import {
+  itemFadeInUpVariants,
+  itemScaleInSpringVariants,
+  staggerContainerVariants,
+} from "@/lib/framer-variants";
 
 export function HomeTech() {
   const previewItems = techSections
@@ -16,11 +21,14 @@ export function HomeTech() {
   return (
     <section className="h-screen flex items-center justify-center bg-background p-4 sm:p-6 md:p-8">
       <Container className="h-full flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full items-center">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full items-center"
+        >
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInLeftVariants}
+            variants={itemFadeInUpVariants}
             className="space-y-4 sm:space-y-6 text-center md:text-left"
           >
             <div className="flex items-center justify-center md:justify-start gap-2">
@@ -46,10 +54,7 @@ export function HomeTech() {
           </motion.div>
           {/* Sağ Alan: Teknoloji İkonları */}
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInRightVariants}
-            transition={{ delay: 0.2 }}
+            variants={itemScaleInSpringVariants}
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 justify-center"
           >
             {previewItems.map(({ name, icon }) => (
@@ -70,7 +75,7 @@ export function HomeTech() {
               </div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

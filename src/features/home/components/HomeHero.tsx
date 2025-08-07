@@ -72,7 +72,7 @@ export function HomeHero() {
             variants={fadeInRightVariants}
             transition={{ delay: 0.3 }}
           >
-            <div className="relative w-full max-w-[300px] sm:max-w-[400px]">
+            <div className="relative w-full max-w-[400px] sm:max-w-[400px]">
               <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-2xl"
                 animate={{
