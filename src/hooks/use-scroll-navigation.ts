@@ -1,3 +1,4 @@
+// ✅ use-scroll-navigation.ts (güncellenmiş hali)
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -38,23 +39,31 @@ export function useScrollNavigation({
     [totalSections, animationDuration]
   );
 
-  const canScrollContainer = (e: Event): boolean => {
+  const canScrollContainer = (
+    e: Event,
+    direction: "next" | "prev"
+  ): boolean => {
     let target = e.target as HTMLElement | null;
 
     while (target) {
-      if (
+      const overflowY = getComputedStyle(target).overflowY;
+      const isScrollable =
         target.scrollHeight > target.clientHeight &&
-        getComputedStyle(target).overflowY !== "visible"
-      ) {
+        overflowY !== "visible" &&
+        overflowY !== "hidden";
+
+      if (isScrollable) {
         const scrollTop = target.scrollTop;
+        const scrollBottom = scrollTop + target.clientHeight;
         const scrollHeight = target.scrollHeight;
-        const clientHeight = target.clientHeight;
 
         const atTop = scrollTop === 0;
-        const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+        const atBottom = scrollBottom >= scrollHeight - 1;
 
-        if (!atTop && !atBottom) return true;
+        if (direction === "next" && !atBottom) return true;
+        if (direction === "prev" && !atTop) return true;
       }
+
       target = target.parentElement;
     }
 
@@ -63,10 +72,11 @@ export function useScrollNavigation({
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      if (canScrollContainer(e)) return; // iç scroll aktifse geçiş yapma
+      const direction = e.deltaY > 20 ? "next" : "prev";
+      if (canScrollContainer(e, direction)) return;
+
       e.preventDefault();
-      if (e.deltaY > 20) scrollTo("next");
-      else if (e.deltaY < -20) scrollTo("prev");
+      scrollTo(direction);
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -84,17 +94,26 @@ export function useScrollNavigation({
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
-      if (canScrollContainer(e)) return;
       const touchEndY = e.changedTouches[0].clientY;
       const deltaY = touchEndY - touchStartY.current;
 
-      if (deltaY < -swipeThreshold) scrollTo("next");
-      else if (deltaY > swipeThreshold) scrollTo("prev");
+      const direction =
+        deltaY < -swipeThreshold
+          ? "next"
+          : deltaY > swipeThreshold
+          ? "prev"
+          : null;
+      if (!direction) return;
+      if (canScrollContainer(e, direction)) return;
+
+      scrollTo(direction);
     };
 
     window.addEventListener("wheel", handleWheel, { passive: false });
     window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("touchstart", handleTouchStart, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, {
+      passive: false,
+    });
     window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
