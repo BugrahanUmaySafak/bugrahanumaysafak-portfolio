@@ -38,7 +38,7 @@ export function HomeWrapper() {
         </motion.div>
       </AnimatePresence>
       {/* Dikey dot nav */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
+      <div className="fixed right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
         {sections.map((section, i) => (
           <button
             key={i}

@@ -11,11 +11,11 @@ import {
 
 export function HomeHero() {
   return (
-    <section className="h-screen flex items-center justify-center overflow-hidden">
+    <section className="h-screen flex items-center justify-center overflow-hidden p-4 sm:p-6 md:p-8">
       <Container className="h-full flex items-center">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 w-full">
           <motion.div
-            className="flex-1 flex flex-col justify-center text-left space-y-6"
+            className="flex-1 flex flex-col justify-center text-center md:text-left space-y-4 sm:space-y-6"
             initial="hidden"
             animate="visible"
             variants={fadeInLeftVariants}
@@ -28,7 +28,7 @@ export function HomeHero() {
             >
               <motion.h1
                 variants={itemFadeInUpVariants}
-                className="text-4xl md:text-6xl font-bold text-foreground leading-tight"
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight"
               >
                 Merhaba{" "}
                 <motion.span
@@ -47,14 +47,14 @@ export function HomeHero() {
               </motion.h1>
               <motion.p
                 variants={itemFadeInUpVariants}
-                className="text-muted-foreground text-lg md:text-xl max-w-lg"
+                className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-lg mx-auto md:mx-0"
               >
                 Full Stack geliştirici, modern web teknolojileriyle uçtan uca
                 çözümler üreten yazılım tutkunu.
               </motion.p>
               <motion.div
                 variants={itemFadeInUpVariants}
-                className="flex gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 justify-center md:justify-start"
               >
                 <button className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors">
                   Projelerimi Gör
@@ -72,7 +72,7 @@ export function HomeHero() {
             variants={fadeInRightVariants}
             transition={{ delay: 0.3 }}
           >
-            <div className="relative">
+            <div className="relative w-full max-w-[300px] sm:max-w-[400px]">
               <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-2xl"
                 animate={{
@@ -90,7 +90,7 @@ export function HomeHero() {
                 alt="Pixel Avatar"
                 width={400}
                 height={400}
-                className="rounded-2xl object-contain max-h-[400px] w-auto relative z-10"
+                className="rounded-2xl object-contain w-full h-auto relative z-10"
                 priority
               />
             </div>

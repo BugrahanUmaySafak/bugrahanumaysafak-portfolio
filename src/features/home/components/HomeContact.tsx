@@ -11,7 +11,7 @@ import {
 
 export function HomeContact() {
   return (
-    <section className="h-screen flex items-center justify-center">
+    <section className="h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
       <Container>
         <motion.div
           className="text-center mx-auto"
@@ -21,7 +21,7 @@ export function HomeContact() {
         >
           <motion.div
             variants={itemFadeInUpVariants}
-            className="flex items-center justify-center gap-2 mb-6"
+            className="flex items-center justify-center gap-2 mb-4 sm:mb-6"
           >
             <MessageSquare className="w-6 h-6 text-primary" />
             <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
@@ -30,38 +30,44 @@ export function HomeContact() {
           </motion.div>
           <motion.h2
             variants={itemFadeInUpVariants}
-            className="text-3xl md:text-5xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight"
           >
             Bir Proje Fikriniz Var mı?
           </motion.h2>
           <motion.p
             variants={itemFadeInUpVariants}
-            className="text-muted-foreground text-lg md:text-xl mb-12 max-w-2xl mx-auto"
+            className="text-muted-foreground text-base sm:text-lg md:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto"
           >
             Modern web teknolojileriyle hayalinizdeki projeyi birlikte hayata
             geçirelim. Size en uygun çözümü bulmak için buradayım.
           </motion.p>
           <motion.div
             variants={itemFadeInUpVariants}
-            className="grid md:grid-cols-3 gap-6 mb-12"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12"
           >
-            <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-              <Mail className="w-8 h-8 text-primary mb-4 mx-auto" />
-              <h3 className="font-semibold mb-2">Email</h3>
+            <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-5 sm:p-6 hover:shadow-lg transition-all duration-300">
+              <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-primary mb-3 sm:mb-4 mx-auto" />
+              <h3 className="font-semibold mb-1 sm:mb-2 text-lg sm:text-xl">
+                Email
+              </h3>
               <p className="text-muted-foreground text-sm">
                 Detaylı proje bilgileri için
               </p>
             </div>
-            <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-              <User className="w-8 h-8 text-primary mb-4 mx-auto" />
-              <h3 className="font-semibold mb-2">Consultation</h3>
+            <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-5 sm:p-6 hover:shadow-lg transition-all duration-300">
+              <User className="w-7 h-7 sm:w-8 sm:h-8 text-primary mb-3 sm:mb-4 mx-auto" />
+              <h3 className="font-semibold mb-1 sm:mb-2 text-lg sm:text-xl">
+                Consultation
+              </h3>
               <p className="text-muted-foreground text-sm">
                 Ücretsiz proje danışmanlığı
               </p>
             </div>
-            <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-              <Send className="w-8 h-8 text-primary mb-4 mx-auto" />
-              <h3 className="font-semibold mb-2">Quick Response</h3>
+            <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-5 sm:p-6 hover:shadow-lg transition-all duration-300">
+              <Send className="w-7 h-7 sm:w-8 sm:h-8 text-primary mb-3 sm:mb-4 mx-auto" />
+              <h3 className="font-semibold mb-1 sm:mb-2 text-lg sm:text-xl">
+                Quick Response
+              </h3>
               <p className="text-muted-foreground text-sm">
                 24 saat içinde geri dönüş
               </p>
@@ -69,7 +75,7 @@ export function HomeContact() {
           </motion.div>
           <motion.div
             variants={itemFadeInUpVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
           >
             <Button asChild size="lg" className="rounded-full px-8">
               <Link href="/contact">

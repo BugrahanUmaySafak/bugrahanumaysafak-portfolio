@@ -14,25 +14,26 @@ export function HomeTech() {
     .slice(0, 8);
 
   return (
-    <section className="h-screen flex items-center justify-center bg-background">
+    <section className="h-screen flex items-center justify-center bg-background p-4 sm:p-6 md:p-8">
       <Container className="h-full flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full items-center">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInLeftVariants}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6 text-center md:text-left"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2">
               <Sparkles className="text-primary w-5 h-5" />
               <span className="text-sm text-muted-foreground uppercase tracking-widest">
                 Skills
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Deneyim Sahibi Olduğum <br /> Teknolojiler
+            <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold leading-tight">
+              Deneyim Sahibi Olduğum <br className="hidden sm:inline" />{" "}
+              Teknolojiler
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg max-w-md">
+            <p className="text-muted-foreground text-base md:text-lg max-w-md mx-auto md:mx-0">
               Frontend, Backend ve DevOps alanlarında kullandığım modern
               teknolojileri detaylıca keşfetmek için hemen göz at.
             </p>
@@ -43,19 +44,18 @@ export function HomeTech() {
               </Link>
             </Button>
           </motion.div>
-
           {/* Sağ Alan: Teknoloji İkonları */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInRightVariants}
             transition={{ delay: 0.2 }}
-            className="grid grid-cols-4 sm:grid-cols-4 gap-6 justify-center"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 justify-center"
           >
             {previewItems.map(({ name, icon }) => (
               <div
                 key={name}
-                className="flex flex-col items-center gap-2 p-4 border border-border rounded-2xl hover:bg-muted/20 transition-all"
+                className="flex flex-col items-center gap-2 p-3 sm:p-4 border border-border rounded-2xl hover:bg-muted/20 transition-all"
               >
                 <Image
                   src={icon || "/placeholder.svg"}
