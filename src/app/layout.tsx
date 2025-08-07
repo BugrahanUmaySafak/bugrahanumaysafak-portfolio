@@ -2,10 +2,9 @@
 
 import type React from "react";
 import { Inter } from "next/font/google";
-import "@/styles/globals.css"; // Updated import path
+import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header/Header";
-import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 

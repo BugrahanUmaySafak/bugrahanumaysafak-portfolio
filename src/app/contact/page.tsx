@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -41,6 +40,12 @@ import {
 import Link from "next/link";
 import { toast } from "sonner";
 import { Container } from "@/components/Container";
+import {
+  fadeInLeftVariants,
+  fadeInRightVariants,
+  fadeInUpVariants,
+  scaleInVariants,
+} from "@/lib/framer-variants";
 
 const contactSchema = z.object({
   name: z.string().min(2, "İsim en az 2 karakter olmalıdır"),
@@ -103,8 +108,9 @@ export default function ContactPage() {
       <div className="min-h-screen flex items-center justify-center bg-background pt-20 pb-10">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial="hidden"
+            animate="visible"
+            variants={scaleInVariants}
             className="text-center mx-auto"
           >
             <div className="w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -128,14 +134,15 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background pt-20 pb-10">
+    <div className="min-h-screen bg-background pt-20 pb-10 overflow-x-hidden">
       {" "}
       {/* Added min-h-screen, pt-20, pb-10 */}
       <Container>
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUpVariants}
           className="text-center mb-8 md:mb-16"
         >
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
@@ -147,12 +154,12 @@ export default function ContactPage() {
             kullanabilirsiniz.
           </p>
         </motion.div>
-
         <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInLeftVariants}
             transition={{ delay: 0.2 }}
             className="space-y-6 md:space-y-8"
           >
@@ -190,7 +197,6 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-
             <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-4 md:p-6">
               <h3 className="font-semibold mb-4">Çalışma Saatleri</h3>
               <div className="space-y-2 text-sm">
@@ -211,11 +217,11 @@ export default function ContactPage() {
               </div>
             </div>
           </motion.div>
-
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInRightVariants}
             transition={{ delay: 0.4 }}
             className="lg:col-span-2"
           >

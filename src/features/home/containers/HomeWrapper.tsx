@@ -1,10 +1,10 @@
 "use client";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { HomeHero } from "../components/HomeHero";
 import { HomeTech } from "../components/HomeTech";
 import { HomeContact } from "../components/HomeContact";
 import { useScrollNavigation } from "@/hooks/use-scroll-navigation";
+import { sectionTransitionVariants } from "@/lib/framer-variants";
 
 const sections = [
   { id: "hero", Component: HomeHero },
@@ -28,10 +28,10 @@ export function HomeWrapper() {
       <AnimatePresence mode="wait">
         <motion.div
           key={sections[index].id}
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -100 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={sectionTransitionVariants}
           className="absolute w-full h-full"
         >
           <CurrentSection />

@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/ui/button";
@@ -7,21 +6,21 @@ import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { techSections } from "@/data/technologies";
+import { fadeInLeftVariants, fadeInRightVariants } from "@/lib/framer-variants";
 
 export function HomeTech() {
   const previewItems = techSections
     .flatMap((section) => section.items)
-    .slice(0, 8); // sadece 8 ikon göster
+    .slice(0, 8);
 
   return (
     <section className="h-screen flex items-center justify-center bg-background">
       <Container className="h-full flex items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-center">
-          {/* Sol Alan: Metin + CTA */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInLeftVariants}
             className="space-y-6"
           >
             <div className="flex items-center gap-2">
@@ -44,11 +43,13 @@ export function HomeTech() {
               </Link>
             </Button>
           </motion.div>
+
           {/* Sağ Alan: Teknoloji İkonları */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInRightVariants}
+            transition={{ delay: 0.2 }}
             className="grid grid-cols-4 sm:grid-cols-4 gap-6 justify-center"
           >
             {previewItems.map(({ name, icon }) => (

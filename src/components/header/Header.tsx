@@ -1,12 +1,14 @@
 "use client";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/Container";
 import { ModeToggle } from "@/components/ModeToggle";
 import { ModeLanguage } from "@/components/ModeLanguage";
 import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { mobileMenuVariants } from "@/lib/framer-variants";
 
 const navigationItems = [
   { label: "Projects", href: "/projects" },
@@ -17,19 +19,20 @@ const navigationItems = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const currentPath = usePathname(); // Use usePathname to get the current path
+  const currentPath = usePathname();
 
   return (
     <header className="bg-background/90 backdrop-blur-sm top-0 z-50 border-b h-20 sticky">
       <Container className="flex items-center justify-between h-20">
-        {/* Logo */}
-        <div className="text-xl font-bold text-foreground leading-tight">
+        <Link
+          href="/"
+          className="text-xl font-bold text-foreground leading-tight"
+        >
           <div>My</div>
           <div className="-mt-1">
             Portfolio<span className="text-primary">...</span>
           </div>
-        </div>
-
+        </Link>
         <nav className="hidden md:flex gap-2 lg:gap-4">
           {navigationItems.map(({ label, href, isCTA }) => {
             const isActive = currentPath === href;
@@ -49,7 +52,6 @@ export default function Header() {
             );
           })}
         </nav>
-
         <div className="flex gap-2 items-center">
           <div className="hidden sm:flex gap-2">
             <ModeToggle />
@@ -69,35 +71,42 @@ export default function Header() {
           </Button>
         </div>
       </Container>
-
-      {isMenuOpen && (
-        <div className="md:hidden border-t bg-background/95 backdrop-blur-sm">
-          <Container className="py-4">
-            <nav className="flex flex-col gap-2">
-              {navigationItems.map(({ label, href, isCTA }) => {
-                const isActive = currentPath === href;
-                return (
-                  <Button
-                    key={label}
-                    variant={
-                      isCTA ? "default" : isActive ? "secondary" : "ghost"
-                    }
-                    className="justify-start"
-                    asChild
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <a href={href}>{label}</a>
-                  </Button>
-                );
-              })}
-            </nav>
-            <div className="flex gap-2 mt-4 pt-4 border-t">
-              <ModeToggle />
-              <ModeLanguage />
-            </div>
-          </Container>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={mobileMenuVariants}
+            className="md:hidden border-t bg-background/95 backdrop-blur-sm overflow-hidden" // Added overflow-hidden
+          >
+            <Container className="py-4">
+              <nav className="flex flex-col gap-2">
+                {navigationItems.map(({ label, href, isCTA }) => {
+                  const isActive = currentPath === href;
+                  return (
+                    <Button
+                      key={label}
+                      variant={
+                        isCTA ? "default" : isActive ? "secondary" : "ghost"
+                      }
+                      className="justify-start"
+                      asChild
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <a href={href}>{label}</a>
+                    </Button>
+                  );
+                })}
+              </nav>
+              <div className="flex gap-2 mt-4 pt-4 border-t">
+                <ModeToggle />
+                <ModeLanguage />
+              </div>
+            </Container>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

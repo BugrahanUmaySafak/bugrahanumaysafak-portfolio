@@ -1,10 +1,13 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare, Send, User } from "lucide-react";
 import Link from "next/link";
+import {
+  itemFadeInUpVariants,
+  staggerContainerVariants,
+} from "@/lib/framer-variants";
 
 export function HomeContact() {
   return (
@@ -12,38 +15,35 @@ export function HomeContact() {
       <Container>
         <motion.div
           className="text-center mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainerVariants}
         >
-          <div className="flex items-center justify-center gap-2 mb-6">
+          <motion.div
+            variants={itemFadeInUpVariants}
+            className="flex items-center justify-center gap-2 mb-6"
+          >
             <MessageSquare className="w-6 h-6 text-primary" />
             <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-              Get In Touch
+              İletişime Geçin
             </span>
-          </div>
+          </motion.div>
           <motion.h2
+            variants={itemFadeInUpVariants}
             className="text-3xl md:text-5xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
           >
             Bir Proje Fikriniz Var mı?
           </motion.h2>
           <motion.p
+            variants={itemFadeInUpVariants}
             className="text-muted-foreground text-lg md:text-xl mb-12 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
           >
             Modern web teknolojileriyle hayalinizdeki projeyi birlikte hayata
             geçirelim. Size en uygun çözümü bulmak için buradayım.
           </motion.p>
           <motion.div
+            variants={itemFadeInUpVariants}
             className="grid md:grid-cols-3 gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div className="bg-card/50 backdrop-blur-sm border rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
               <Mail className="w-8 h-8 text-primary mb-4 mx-auto" />
@@ -68,10 +68,8 @@ export function HomeContact() {
             </div>
           </motion.div>
           <motion.div
+            variants={itemFadeInUpVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Button asChild size="lg" className="rounded-full px-8">
               <Link href="/contact">
