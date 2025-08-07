@@ -17,12 +17,16 @@ export function useScrollNavigation({
   const isAnimatingRef = useRef(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const touchStartY = useRef(0);
+  const wheelDirectionRef = useRef<"none" | "next" | "prev">("none");
 
   const scrollTo = useCallback(
     (dir: "next" | "prev") => {
       if (isAnimatingRef.current) return;
+      if (wheelDirectionRef.current === dir) return;
 
       isAnimatingRef.current = true;
+      wheelDirectionRef.current = dir;
+
       setIndex((prev) => {
         const nextIndex =
           dir === "next"
@@ -34,6 +38,7 @@ export function useScrollNavigation({
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       timeoutRef.current = setTimeout(() => {
         isAnimatingRef.current = false;
+        wheelDirectionRef.current = "none";
       }, animationDuration);
     },
     [totalSections, animationDuration]
@@ -72,7 +77,8 @@ export function useScrollNavigation({
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      const direction = e.deltaY > 20 ? "next" : "prev";
+      const direction = e.deltaY > 50 ? "next" : e.deltaY < -50 ? "prev" : null;
+      if (!direction) return;
       if (canScrollContainer(e, direction)) return;
 
       e.preventDefault();

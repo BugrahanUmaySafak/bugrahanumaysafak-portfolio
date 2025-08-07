@@ -16,15 +16,13 @@ export function HomeWrapper() {
   const { index, goToSection } = useScrollNavigation({
     totalSections: sections.length,
     animationDuration: 1000,
-    swipeThreshold: 50, // Added swipe threshold for touch sensitivity
+    swipeThreshold: 50,
   });
 
   const CurrentSection = sections[index].Component;
 
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {" "}
-      {/* This ensures full-page scroll behavior only for HomeWrapper */}
       <AnimatePresence mode="wait">
         <motion.div
           key={sections[index].id}
@@ -37,7 +35,7 @@ export function HomeWrapper() {
           <CurrentSection />
         </motion.div>
       </AnimatePresence>
-      {/* Dikey dot nav */}
+
       <div className="fixed right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
         {sections.map((section, i) => (
           <button
