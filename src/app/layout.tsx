@@ -23,7 +23,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main>{children}</main>
+          <main className="pt-20 min-h-screen bg-background">{children}</main>
         </ThemeProvider>
       </body>
     </html>

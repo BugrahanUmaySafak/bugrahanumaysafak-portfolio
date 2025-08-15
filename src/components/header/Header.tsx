@@ -1,17 +1,18 @@
 "use client";
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/Container";
 import { ModeToggle } from "@/components/ModeToggle";
 import { ModeLanguage } from "@/components/ModeLanguage";
 import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { mobileMenuVariants } from "@/lib/framer-variants";
+import { usePathname } from "next/navigation";
 
-const navigationItems = [
-  { label: "Projects", href: "/projects" },
+type NavItem = { label: string; href: string; isCTA?: boolean };
+const navigationItems: readonly NavItem[] = [
   { label: "Skills", href: "/skills" },
   { label: "About", href: "/about" },
   { label: "Contact Me", href: "/contact", isCTA: true },
@@ -22,7 +23,7 @@ export default function Header() {
   const currentPath = usePathname();
 
   return (
-    <header className="bg-background/90 backdrop-blur-sm top-0 z-50 border-b h-20 sticky">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b h-20">
       <Container className="flex items-center justify-between h-20">
         <Link
           href="/"
@@ -33,6 +34,8 @@ export default function Header() {
             Portfolio<span className="text-primary">...</span>
           </div>
         </Link>
+
+        {/* Desktop nav */}
         <nav className="hidden md:flex gap-2 lg:gap-4">
           {navigationItems.map(({ label, href, isCTA }) => {
             const isActive = currentPath === href;
@@ -47,11 +50,12 @@ export default function Header() {
                 }`}
                 asChild
               >
-                <a href={href}>{label}</a>
+                <Link href={href}>{label}</Link>
               </Button>
             );
           })}
         </nav>
+
         <div className="flex gap-2 items-center">
           <div className="hidden sm:flex gap-2">
             <ModeToggle />
@@ -61,7 +65,8 @@ export default function Header() {
             variant="ghost"
             size="icon"
             className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen((v) => !v)}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? (
               <X className="h-5 w-5" />
@@ -71,6 +76,8 @@ export default function Header() {
           </Button>
         </div>
       </Container>
+
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -78,7 +85,7 @@ export default function Header() {
             animate="visible"
             exit="hidden"
             variants={mobileMenuVariants}
-            className="md:hidden border-t bg-background/95 backdrop-blur-sm overflow-hidden" // Added overflow-hidden
+            className="md:hidden border-t bg-background/95 backdrop-blur-sm overflow-hidden"
           >
             <Container className="py-4">
               <nav className="flex flex-col gap-2">
@@ -94,7 +101,7 @@ export default function Header() {
                       asChild
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <a href={href}>{label}</a>
+                      <Link href={href}>{label}</Link>
                     </Button>
                   );
                 })}

@@ -1,10 +1,10 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
-import Image from "next/image";
 import { techSections } from "@/data/technologies";
 import {
   itemFadeInUpVariants,
@@ -13,14 +13,11 @@ import {
 } from "@/lib/framer-variants";
 
 export function HomeTech() {
-  const previewItems = techSections
-    .flatMap((section) => section.items)
-    .slice(0, 8);
-
+  const previewItems = techSections.flatMap((s) => s.items).slice(0, 8);
   return (
-    <section className="h-screen">
-      <div className="h-full overflow-y-auto max-h-screen p-4 sm:p-6 md:p-8">
-        <Container className="h-full flex items-center py-16 sm:py-20 md:py-24">
+    <section className="h-full">
+      <div className="min-h-full p-4 sm:p-6 md:p-8 overflow-y-auto md:overflow-y-visible max-h-[calc(100dvh-80px)] supports-[height:100svh]:max-h-[calc(100svh-80px)] md:max-h-none">
+        <Container className="min-h-full flex items-center py-12 sm:py-16 md:py-20">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -37,7 +34,7 @@ export function HomeTech() {
                   Skills
                 </span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
                 Deneyim Sahibi Olduğum <br className="hidden sm:inline" />{" "}
                 Teknolojiler
               </h2>
@@ -52,6 +49,7 @@ export function HomeTech() {
                 </Link>
               </Button>
             </motion.div>
+
             <motion.div
               variants={itemScaleInSpringVariants}
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 justify-center"
@@ -61,12 +59,13 @@ export function HomeTech() {
                   key={name}
                   className="flex flex-col items-center gap-2 p-3 sm:p-4 border border-border rounded-2xl hover:bg-muted/20 transition-all"
                 >
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={icon || "/placeholder.svg"}
                     alt={name}
                     width={40}
                     height={40}
-                    className="object-contain dark:text-white"
+                    className="object-contain"
                   />
                   <span className="text-xs text-muted-foreground text-center">
                     {name}

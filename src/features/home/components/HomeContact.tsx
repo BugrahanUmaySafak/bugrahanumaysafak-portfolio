@@ -14,9 +14,10 @@ import {
 
 export function HomeContact() {
   return (
-    <section className="h-screen">
-      <div className="h-full overflow-y-auto max-h-screen p-4 sm:p-6 md:p-8">
-        <Container className="py-16 sm:py-20 md:py-24">
+    <section className="h-full">
+      {/* Scrollbar appears only when content overflows */}
+      <div className="h-full p-4 sm:p-6 md:p-8 overflow-y-auto md:overflow-y-visible max-h-[calc(100dvh-80px)] supports-[height:100svh]:max-h-[calc(100svh-80px)] md:max-h-none">
+        <Container className="min-h-full flex flex-col justify-center py-12 sm:py-16 md:py-20">
           <motion.div
             className="text-center mx-auto"
             initial="hidden"
@@ -45,49 +46,44 @@ export function HomeContact() {
               Modern web teknolojileriyle hayalinizdeki projeyi birlikte hayata
               geçirelim. Size en uygun çözümü bulmak için buradayım.
             </motion.p>
+
             <motion.div
-              variants={staggerContainerVariants} // Stagger for cards
+              variants={staggerContainerVariants}
               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12"
             >
-              <motion.div
-                variants={itemScaleInSpringVariants} // Scale in for each card
-                className="bg-card/50 backdrop-blur-sm border rounded-2xl p-5 sm:p-6 hover:shadow-lg transition-all duration-300"
-              >
-                <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-primary mb-3 sm:mb-4 mx-auto" />
-                <h3 className="font-semibold mb-1 sm:mb-2 text-lg sm:text-xl">
-                  Email
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  Detaylı proje bilgileri için
-                </p>
-              </motion.div>
-              <motion.div
-                variants={itemScaleInSpringVariants} // Scale in for each card
-                className="bg-card/50 backdrop-blur-sm border rounded-2xl p-5 sm:p-6 hover:shadow-lg transition-all duration-300"
-              >
-                <User className="w-7 h-7 sm:w-8 sm:h-8 text-primary mb-3 sm:mb-4 mx-auto" />
-                <h3 className="font-semibold mb-1 sm:mb-2 text-lg sm:text-xl">
-                  Consultation
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  Ücretsiz proje danışmanlığı
-                </p>
-              </motion.div>
-              <motion.div
-                variants={itemScaleInSpringVariants} // Scale in for each card
-                className="bg-card/50 backdrop-blur-sm border rounded-2xl p-5 sm:p-6 hover:shadow-lg transition-all duration-300"
-              >
-                <Send className="w-7 h-7 sm:w-8 sm:h-8 text-primary mb-3 sm:mb-4 mx-auto" />
-                <h3 className="font-semibold mb-1 sm:mb-2 text-lg sm:text-xl">
-                  Quick Response
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  24 saat içinde geri dönüş
-                </p>
-              </motion.div>
+              {[
+                {
+                  Icon: Mail,
+                  title: "Email",
+                  text: "Detaylı proje bilgileri için",
+                },
+                {
+                  Icon: User,
+                  title: "Consultation",
+                  text: "Ücretsiz proje danışmanlığı",
+                },
+                {
+                  Icon: Send,
+                  title: "Quick Response",
+                  text: "24 saat içinde geri dönüş",
+                },
+              ].map(({ Icon, title, text }) => (
+                <motion.div
+                  key={title}
+                  variants={itemScaleInSpringVariants}
+                  className="bg-card/50 backdrop-blur-sm border rounded-2xl p-5 sm:p-6 hover:shadow-lg transition-all duration-300"
+                >
+                  <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary mb-3 sm:mb-4 mx-auto" />
+                  <h3 className="font-semibold mb-1 sm:mb-2 text-lg sm:text-xl">
+                    {title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">{text}</p>
+                </motion.div>
+              ))}
             </motion.div>
+
             <motion.div
-              variants={itemFadeInUpVariants} // Fade in for buttons
+              variants={itemFadeInUpVariants}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
             >
               <Button asChild size="lg" className="rounded-full px-8">
@@ -96,9 +92,16 @@ export function HomeContact() {
                   İletişime Geç
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="rounded-full px-8">
-                <Mail className="w-4 h-4 mr-2" />
-                umay@example.com
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full px-8"
+                asChild
+              >
+                <a href="mailto:umay@example.com">
+                  <Mail className="w-4 h-4 mr-2" />
+                  umay@example.com
+                </a>
               </Button>
             </motion.div>
           </motion.div>

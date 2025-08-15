@@ -12,9 +12,9 @@ export const techSections = [
   {
     title: "Backend",
     items: [
-      { name: "Node.js", icon: "/tech-icons/nodejs.svg" }, // varsa ekle
-      { name: "Express", icon: "/tech-icons/express.svg" }, // varsa ekle
-      { name: "Prisma", icon: "/tech-icons/prisma.svg" }, // varsa ekle
+      { name: "Node.js", icon: "/tech-icons/nodejs.svg" },
+      { name: "Express", icon: "/tech-icons/express.svg" },
+      { name: "Prisma", icon: "/tech-icons/prisma.svg" },
     ],
   },
   {
@@ -24,7 +24,7 @@ export const techSections = [
       { name: "GitHub", icon: "/tech-icons/github.svg" },
       { name: "GitLab", icon: "/tech-icons/gitlab.svg" },
       { name: "Vercel", icon: "/tech-icons/vercel.svg" },
-      { name: "ESLint", icon: "/tech-icons/eslint.svg" }, // varsa ekle
+      { name: "ESLint", icon: "/tech-icons/eslint.svg" },
     ],
   },
 ];

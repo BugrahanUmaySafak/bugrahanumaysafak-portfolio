@@ -1,5 +1,5 @@
-// ✅ use-scroll-navigation.ts (güncellenmiş hali)
 "use client";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 
 interface UseScrollNavigationProps {
@@ -10,7 +10,7 @@ interface UseScrollNavigationProps {
 
 export function useScrollNavigation({
   totalSections,
-  animationDuration = 1000,
+  animationDuration = 900,
   swipeThreshold = 50,
 }: UseScrollNavigationProps) {
   const [index, setIndex] = useState(0);
@@ -51,7 +51,8 @@ export function useScrollNavigation({
     let target = e.target as HTMLElement | null;
 
     while (target) {
-      const overflowY = getComputedStyle(target).overflowY;
+      const style = getComputedStyle(target);
+      const overflowY = style.overflowY;
       const isScrollable =
         target.scrollHeight > target.clientHeight &&
         overflowY !== "visible" &&
@@ -62,7 +63,7 @@ export function useScrollNavigation({
         const scrollBottom = scrollTop + target.clientHeight;
         const scrollHeight = target.scrollHeight;
 
-        const atTop = scrollTop === 0;
+        const atTop = scrollTop <= 0;
         const atBottom = scrollBottom >= scrollHeight - 1;
 
         if (direction === "next" && !atBottom) return true;
@@ -86,6 +87,7 @@ export function useScrollNavigation({
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
+      // Space or ArrowDown => next; ArrowUp => prev
       if (e.key === "ArrowDown" || e.key === " ") {
         e.preventDefault();
         scrollTo("next");
@@ -117,17 +119,14 @@ export function useScrollNavigation({
 
     window.addEventListener("wheel", handleWheel, { passive: false });
     window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("touchstart", handleTouchStart, {
-      passive: false,
-    });
-    window.addEventListener("touchend", handleTouchEnd);
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, [scrollTo, swipeThreshold]);
 
@@ -154,5 +153,5 @@ export function useScrollNavigation({
     isAnimating: isAnimatingRef.current,
     scrollTo,
     goToSection,
-  };
+  } as const;
 }
