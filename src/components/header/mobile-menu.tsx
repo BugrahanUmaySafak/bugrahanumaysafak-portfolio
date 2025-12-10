@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { LocaleSwitch } from "@/components/switches/locale-switch";
 import { ThemeSwitch } from "@/components/switches/theme-switch";
@@ -28,7 +27,6 @@ type MobileMenuProps = {
 export function MobileMenu({ items }: MobileMenuProps) {
   return (
     <Sheet>
-      {/* Hamburger butonu (sadece mobil) */}
       <SheetTrigger asChild>
         <Button
           type="button"
@@ -37,21 +35,17 @@ export function MobileMenu({ items }: MobileMenuProps) {
           className="md:hidden"
           aria-label="Open menu"
         >
-          <Menu className="h-5 w-5" />
+          <Menu className="h-7 w-7" />
         </Button>
       </SheetTrigger>
 
-      {/* Sağdan açılan panel */}
       <SheetContent side="right" className="md:hidden px-6 py-8">
-        {/* A11y için – görünmez başlık/açıklama */}
         <SheetTitle className="sr-only">Mobile navigation</SheetTitle>
         <SheetDescription className="sr-only">
           Navigation links and language/theme toggles
         </SheetDescription>
 
-        {/* Merkezde nav + CTA + alt kontroller */}
         <div className="flex h-full flex-col items-center justify-center gap-10">
-          {/* Nav linkleri + aralarına ince çizgi */}
           <nav className="flex flex-col items-center text-lg font-medium">
             {items.map((item, index) => (
               <React.Fragment key={item.href}>
@@ -71,14 +65,12 @@ export function MobileMenu({ items }: MobileMenuProps) {
             ))}
           </nav>
 
-          {/* Contact CTA – header’dakiyle aynı buton, mobilde menünün ortasında */}
           <SheetClose asChild>
             <Button asChild className="w-full max-w-xs">
               <Link href="#contact">Contact</Link>
             </Button>
           </SheetClose>
 
-          {/* Alt kısım: Locale + Theme – yatay tek satır */}
           <div className="flex items-center justify-center gap-6">
             <LocaleSwitch />
             <ThemeSwitch />
