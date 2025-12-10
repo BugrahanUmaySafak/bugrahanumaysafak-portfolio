@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { Header } from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "Bugrahan Umay Şafak",
@@ -22,6 +23,7 @@ export default async function RootLayout({
       <body>
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header />
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>
