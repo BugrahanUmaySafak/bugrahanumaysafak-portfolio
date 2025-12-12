@@ -2,5 +2,11 @@
   "HomePage": {
     "title": "Hello world!",
     "subtitle": "Welcome to my portfolio."
+  },
+  "Navigation": {
+    "about": "About",
+    "projects": "Projects",
+    "techStack": "Tech Stack",
+    "contact": "Contact"
   }
 }

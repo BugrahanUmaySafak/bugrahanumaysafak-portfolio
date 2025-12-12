@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LocaleSwitch } from "@/components/switches/locale-switch";
@@ -14,10 +13,12 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 type NavItem = {
   href: string;
-  label: string;
+  labelKey: string;
 };
 
 type MobileMenuProps = {
@@ -25,6 +26,8 @@ type MobileMenuProps = {
 };
 
 export function MobileMenu({ items }: MobileMenuProps) {
+  const t = useTranslations("Navigation");
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -32,7 +35,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
           type="button"
           variant="outline"
           size="icon"
-          className="md:hidden"
+          className="md:hidden bg-transparent"
           aria-label="Open menu"
         >
           <Menu className="h-7 w-7" />
@@ -54,7 +57,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
                     href={item.href}
                     className="py-1 text-foreground transition-colors hover:text-muted-foreground"
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                   </Link>
                 </SheetClose>
 
@@ -67,7 +70,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
 
           <SheetClose asChild>
             <Button asChild className="w-full max-w-xs">
-              <Link href="#contact">Contact</Link>
+              <Link href="#contact">{t("contact")}</Link>
             </Button>
           </SheetClose>
 

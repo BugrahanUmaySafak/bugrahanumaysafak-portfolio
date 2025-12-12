@@ -2,5 +2,11 @@
   "HomePage": {
     "title": "Merhaba dünya!",
     "subtitle": "Kişisel portföyüme hoş geldin."
+  },
+  "Navigation": {
+    "about": "Hakkımda",
+    "projects": "Projeler",
+    "techStack": "Teknolojiler",
+    "contact": "İletişim"
   }
 }

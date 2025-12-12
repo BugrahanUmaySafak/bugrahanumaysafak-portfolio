@@ -1,19 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { LocaleSwitch } from "@/components/switches/locale-switch";
 import { ThemeSwitch } from "@/components/switches/theme-switch";
 import { MobileMenu } from "./mobile-menu";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 const NAV_ITEMS = [
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/technologies", label: "Tech Stack" },
+  { href: "/about", labelKey: "about" },
+  { href: "/projects", labelKey: "projects" },
+  { href: "/technologies", labelKey: "techStack" },
 ] as const;
 
 export function Header() {
+  const t = useTranslations("Navigation");
+
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
       <Container className="flex h-24 md:h-20 items-center justify-between">
@@ -40,7 +43,7 @@ export function Header() {
               href={item.href}
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           ))}
         </nav>
@@ -49,7 +52,7 @@ export function Header() {
           <LocaleSwitch />
           <ThemeSwitch />
           <Button asChild size="sm" className="ml-1">
-            <Link href="#contact">Contact</Link>
+            <Link href="#contact">{t("contact")}</Link>
           </Button>
         </div>
 
