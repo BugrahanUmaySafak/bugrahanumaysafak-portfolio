@@ -20,7 +20,8 @@ export function Section({
   return (
     <Tag
       className={cn(
-        "min-h-[calc(100vh-6rem)] md:min-h-[calc(100vh-5rem)]",
+        "min-h-[calc(100dvh-6rem)]",
+        "md:min-h-[calc(100vh-5rem)]",
         "flex items-center",
         className
       )}

@@ -120,3 +120,34 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes wave-hand {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@utility animate-wave {
+  animation: wave-hand 1.4s ease-in-out infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
