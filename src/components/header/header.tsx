@@ -52,7 +52,7 @@ export function Header() {
           <LocaleSwitch />
           <ThemeSwitch />
           <Button asChild size="sm" className="ml-1">
-            <Link href="#contact">{t("contact")}</Link>
+            <Link href="/contact">{t("contact")}</Link>
           </Button>
         </div>
 

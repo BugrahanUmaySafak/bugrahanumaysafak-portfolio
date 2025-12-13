@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Header } from "@/components/header/header";
 import "../../styles/globals.css";
+import { Footer } from "@/components/footer/footer";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -34,6 +35,7 @@ export default async function LocaleLayout({
           >
             <Header />
             {children}
+            <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
