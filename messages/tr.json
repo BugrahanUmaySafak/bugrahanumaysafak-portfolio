@@ -1,12 +1,235 @@
 {
-  "HomePage": {
-    "title": "Merhaba dünya!",
-    "subtitle": "Kişisel portföyüme hoş geldin."
+  "Metadata": {
+    "title": "Buğrahan Umay Şafak · Software Engineer",
+    "description": "Modern web teknolojileriyle web siteleri ve yönetim panelleri geliştiren, full-stack odaklı yazılım mühendisi Buğrahan Umay Şafak'ın portföyü."
   },
   "Navigation": {
+    "home": "Ana sayfa",
     "about": "Hakkımda",
     "projects": "Projeler",
-    "techStack": "Teknolojiler",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "apps": "Uygulamalar",
+    "openMenu": "Menüyü aç",
+    "menu": "Menü",
+    "menuDescription": "Sayfa bağlantıları ve dil seçimi",
+    "language": "Dil",
+    "closeMenu": "Menüyü kapat"
+  },
+  "Common": {
+    "toggleTheme": "Temayı değiştir",
+    "changeLanguage": "Dili değiştir",
+    "skipToContent": "İçeriğe geç"
+  },
+  "Footer": {
+    "tagline": "Web sitelerini ve yönetim panellerini tasarlıyor, geliştiriyor ve yayına alıyorum.",
+    "pages": "Sayfalar",
+    "elsewhere": "Bağlantılar",
+    "rights": "Tüm hakları saklıdır.",
+    "builtWith": "Next.js · Tailwind CSS ile geliştirildi"
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Software Engineer · Full-stack",
+      "greeting": "Merhaba, ben Umay",
+      "intro": "Modern web teknolojileriyle hızlı, erişilebilir ve kullanıcı odaklı ürünler geliştiriyorum. getClinic'te Frontend Developer olarak çalıştım; bugün işletmeler için web sitelerini ve yönetim panellerini tasarımdan yayına kadar uçtan uca hayata geçiriyorum.",
+      "ctaProjects": "Projeleri incele",
+      "ctaContact": "İletişime geç",
+      "portraitAlt": "Umay'ın pixel art portresi",
+      "stats": {
+        "websites": "Yayında web sitesi",
+        "sectors": "Farklı sektör",
+        "experience": "Yıl ürün ekibi deneyimi"
+      }
+    },
+    "Projects": {
+      "eyebrow": "Projeler",
+      "title": "Uçtan uca geliştirdiğim işler",
+      "description": "Tasarımından yayınına kadar tek başıma geliştirdiğim freelance projeler ve bir ürün ekibinde edindiğim tam zamanlı deneyim."
+    },
+    "Experience": {
+      "eyebrow": "Deneyim",
+      "title": "Ürün ekibinden freelance'e",
+      "description": "Bir ürün ekibinde edindiğim deneyimi bugün kendi müşteri projelerimde uçtan uca uyguluyorum."
+    },
+    "Tech": {
+      "eyebrow": "Teknolojiler",
+      "title": "Kullandığım teknolojiler ve araçlar",
+      "description": "Projelerimde kullandığım ve ekip içinde çalışırken deneyim kazandığım teknolojiler ve araçlar."
+    }
+  },
+  "ContactCta": {
+    "eyebrow": "İletişim",
+    "title": "Bir projen mi var? Birlikte hayata geçirelim.",
+    "description": "Yeni bir web sitesi, yönetim paneli ya da mevcut projen için destek arıyorsan bana yazabilirsin.",
+    "button": "İletişime geç"
+  },
+  "About": {
+    "meta": {
+      "title": "Hakkımda",
+      "description": "Buğrahan Umay Şafak kimdir, nasıl çalışır ve hangi deneyimlere sahiptir?"
+    },
+    "Hero": {
+      "eyebrow": "Hakkımda",
+      "title": "Kullanıcı odaklı arayüzlerden uçtan uca ürünlere",
+      "p1": "Ben Buğrahan Umay Şafak, kısaca Umay. Modern web teknolojileriyle hızlı, erişilebilir ve sürdürülebilir ürünler geliştiren bir yazılım mühendisiyim.",
+      "p2": "Haziran 2024 – Temmuz 2025 arasında getClinic'te uzaktan ve tam zamanlı Frontend Developer olarak çalıştım. Şirketin backoffice ve portal sistemlerinin Next.js tabanlı frontend mimarisini tasarladım. Agile/Scrum ile ilerleyen ekipte backend geliştiricilerle yakın çalışmak ve Lighthouse skorlarını 95'in üzerinde tutmanın disiplini bana çok şey kattı.",
+      "p3": "Bugün freelance olarak hukuk, spa & wellness ve eğitim gibi farklı sektörlerdeki müşteriler için web siteleri ve yönetim panelleri geliştiriyorum. Bu projelerde arayüzden backend'e, sunucu kurulumundan yayına kadar tüm süreci tek başıma yürütüyorum.",
+      "portraitAlt": "Buğrahan Umay Şafak'ın fotoğrafı",
+      "profile": {
+        "subtitle": "Software Engineer",
+        "role": {
+          "label": "Rol",
+          "value": "Full-stack Developer · frontend ağırlıklı"
+        },
+        "focus": {
+          "label": "Odak",
+          "value": "React, Next.js, TypeScript, Node.js"
+        },
+        "experience": {
+          "label": "Deneyim",
+          "value": "getClinic (2024 – 2025) · Freelance"
+        },
+        "approach": {
+          "label": "Yaklaşım",
+          "value": "Tasarımdan yayına uçtan uca sahiplik"
+        }
+      }
+    },
+    "Journey": {
+      "eyebrow": "Yolculuk",
+      "title": "Deneyimlerim",
+      "description": "Bir ürün ekibinde arayüz geliştirmekten, müşterilerim için uçtan uca projeler üretmeye."
+    }
+  },
+  "Projects": {
+    "groups": {
+      "freelance": {
+        "title": "Freelance projeler",
+        "description": "Müşterilerim için tasarım, geliştirme ve yayın süreçlerini tek başıma yürüttüğüm işler."
+      },
+      "fulltime": {
+        "title": "Tam zamanlı deneyim",
+        "description": "Bir ürün ekibinin parçası olarak çalıştığım şirketler."
+      }
+    },
+    "status": {
+      "live": "Yayında",
+      "evolving": "Geliştiriliyor",
+      "offline": "Yayında değil"
+    },
+    "kind": {
+      "freelance": "Freelance",
+      "fulltime": "Tam zamanlı"
+    }
+  },
+  "ProjectDetail": {
+    "back": "Tüm projeler",
+    "meta": {
+      "client": "Müşteri",
+      "role": "Rol",
+      "period": "Dönem",
+      "sector": "Sektör",
+      "location": "Konum"
+    },
+    "overview": "Genel bakış",
+    "whatIDid": "Neler yaptım?",
+    "roadmap": "Yol haritası",
+    "stack": "Teknolojiler",
+    "features": "Öne çıkanlar",
+    "links": "Bağlantılar",
+    "galleryEyebrow": "Ekran görüntüleri",
+    "gallery": "Projeden kareler",
+    "mobile": {
+      "eyebrow": "Mobil",
+      "title": "Her ekranda tutarlı deneyim",
+      "description": "Tüm sayfalar mobil cihazlar düşünülerek tasarlandı; menüden çağrı butonlarına kadar her şey dokunmatik ekranda rahat kullanılıyor."
+    },
+    "next": "Sıradaki proje",
+    "galleryPrev": "Önceki ekran görüntüsü",
+    "galleryNext": "Sonraki ekran görüntüsü"
+  },
+  "Technologies": {
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "Arayüz geliştirme, state yönetimi, form ve doğrulama, animasyon."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "API geliştirme, kimlik doğrulama, ORM'ler ve gerçek zamanlı iletişim."
+      },
+      "database": {
+        "title": "Veritabanı",
+        "description": "İlişkisel ve NoSQL veritabanları, önbellekleme ve BaaS çözümleri."
+      },
+      "devops": {
+        "title": "DevOps ve bulut",
+        "description": "Container'lar, sunucu yapılandırması, CDN ve CI/CD süreçleri."
+      },
+      "tooling": {
+        "title": "Araçlar ve test",
+        "description": "Versiyon kontrolü, paket yöneticileri, kod kalitesi, test ve analitik."
+      },
+      "workflow": {
+        "title": "İş birliği",
+        "description": "Atlassian ürünleri, iletişim ve tasarım araçları, çevik süreçler."
+      }
+    },
+    "count": "{count} teknoloji"
+  },
+  "Contact": {
+    "meta": {
+      "title": "İletişim",
+      "description": "Yeni bir proje veya iş fırsatı için Buğrahan Umay Şafak ile iletişime geçin."
+    },
+    "eyebrow": "İletişim",
+    "title": "Birlikte çalışalım",
+    "description": "Yeni bir proje, iş fırsatı ya da sadece teknik bir sohbet için aşağıdaki kanallardan bana ulaşabilirsin.",
+    "channels": "İletişim kanalları",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "copiedToast": "E-posta adresi kopyalandı",
+    "copyFailed": "Kopyalanamadı, adresi elle seçebilirsin",
+    "visual": {
+      "to": "Kime:",
+      "subject": "Konu:",
+      "subjectValue": "Yeni bir proje",
+      "greeting": "Merhaba Umay,"
+    }
+  },
+  "NotFound": {
+    "eyebrow": "404",
+    "title": "Aradığın sayfa bulunamadı",
+    "description": "Sayfa taşınmış ya da hiç var olmamış olabilir.",
+    "back": "Ana sayfaya dön"
+  },
+  "Certifications": {
+    "eyebrow": "Öğrenme",
+    "title": "Sertifikalar",
+    "description": "Öğrenmeye devam ettiğim alanlarda tamamladığım eğitimler.",
+    "verify": "Doğrula",
+    "credentialId": "Kimlik No",
+    "view": "Sertifikayı görüntüle",
+    "viewLabel": "{title} sertifikasını görüntüle",
+    "openPdf": "PDF'i aç",
+    "close": "Kapat",
+    "imageAlt": "{title} tamamlama sertifikası"
+  },
+  "Experience": {
+    "projects": "Projeler",
+    "stack": "Teknolojiler"
+  },
+  "Apps": {
+    "meta": {
+      "title": "Mobil Uygulamalar",
+      "description": "Buğrahan Umay Şafak'ın mobil uygulamaları. Yayınlayacağım uygulamalar yakında burada yer alacak."
+    },
+    "status": "Yakında",
+    "title": "Mobil Uygulamalar",
+    "description": "Mobil uygulama projelerim ve yayınlayacağım ürünler ilerleyen dönemlerde burada yer alacak.",
+    "note": "Bu sırada yazılım projelerimi inceleyebilir ya da benimle iletişime geçebilirsin.",
+    "ctaProjects": "Projeleri incele",
+    "ctaContact": "İletişime geç",
+    "more": "Mobil Uygulamalar sayfasına git"
   }
 }

@@ -1,31 +1,34 @@
-"use client";
-
 import { Section } from "@/components/layout/section";
-import { HomeHero } from "@/features/home/components/home-hero";
-import { HomeMiniAbout } from "@/features/home/components/home-mini-about";
-import { HomeTechnologiesSnapshot } from "../components/home-technologies-snapshot";
-import { HomeExperienceProjects } from "../components/home-experience-projects";
-import { HomeContact } from "../components/home-contact";
+import { ContactCta } from "@/components/cta/contact-cta";
+import { CertificationsOverview } from "@/components/certifications/certifications-overview";
+import { HomeHero } from "../components/home-hero";
+import { HomeExperience } from "../components/home-experience";
+import { HomeProjects } from "../components/home-projects";
+import { HomeTechStack } from "../components/home-tech-stack";
+import { HomeApps } from "../components/home-apps";
 
 export function HomePageWrapper() {
   return (
-    <>
-      <Section as="main" className="items-start pt-6 md:items-center md:pt-0">
-        <HomeHero />
+    <main>
+      <HomeHero />
+      <Section id="experience">
+        <HomeExperience />
       </Section>
-      <Section as="main" className="items-start pt-4 md:pt-0 md:items-center ">
-        <HomeMiniAbout />
+      <Section id="projects" className="border-y bg-surface">
+        <HomeProjects />
       </Section>
-      <Section as="main" className="items-start pt-4 md:pt-0 md:items-center ">
-        <HomeExperienceProjects />
+      <Section id="tech-stack">
+        <HomeTechStack />
       </Section>
-      <Section as="main" className="items-start pt-4 md:pt-0 md:items-center ">
-        <HomeTechnologiesSnapshot />
+      <Section id="certifications" className="border-y bg-surface">
+        <CertificationsOverview />
       </Section>
-
-      <Section as="main" className="items-start pt-4 md:pt-0 md:items-center ">
-        <HomeContact />
+      <Section>
+        <div className="space-y-6">
+          <HomeApps />
+          <ContactCta />
+        </div>
       </Section>
-    </>
+    </main>
   );
 }

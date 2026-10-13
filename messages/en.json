@@ -1,12 +1,235 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "subtitle": "Welcome to my portfolio."
+  "Metadata": {
+    "title": "Buğrahan Umay Şafak · Software Engineer",
+    "description": "Portfolio of Buğrahan Umay Şafak, a full-stack-minded software engineer building websites and admin panels with modern web technologies."
   },
   "Navigation": {
+    "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "techStack": "Tech Stack",
-    "contact": "Contact"
+    "contact": "Contact",
+    "apps": "Apps",
+    "openMenu": "Open menu",
+    "menu": "Menu",
+    "menuDescription": "Page links and language selection",
+    "language": "Language",
+    "closeMenu": "Close menu"
+  },
+  "Common": {
+    "toggleTheme": "Toggle theme",
+    "changeLanguage": "Change language",
+    "skipToContent": "Skip to content"
+  },
+  "Footer": {
+    "tagline": "I design, build and ship websites and admin panels.",
+    "pages": "Pages",
+    "elsewhere": "Elsewhere",
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js · Tailwind CSS"
+  },
+  "Home": {
+    "Hero": {
+      "eyebrow": "Software Engineer · Full-stack",
+      "greeting": "Hi, I'm Umay",
+      "intro": "I build fast, accessible and user-focused products with modern web technologies. I worked as a Frontend Developer at getClinic; today I build websites and admin panels for businesses end to end, from design to launch.",
+      "ctaProjects": "View projects",
+      "ctaContact": "Get in touch",
+      "portraitAlt": "Pixel art portrait of Umay",
+      "stats": {
+        "websites": "Live websites",
+        "sectors": "Industries",
+        "experience": "Year on a product team"
+      }
+    },
+    "Projects": {
+      "eyebrow": "Projects",
+      "title": "Work I built end to end",
+      "description": "Freelance projects I built on my own from design to launch, plus my full-time experience on a product team."
+    },
+    "Experience": {
+      "eyebrow": "Experience",
+      "title": "From a product team to freelance",
+      "description": "Today I apply what I learned on a product team to my own client projects, end to end."
+    },
+    "Tech": {
+      "eyebrow": "Tech stack",
+      "title": "Technologies and tools I use",
+      "description": "Technologies and tools I use in my projects and gained experience with while working on a team."
+    }
+  },
+  "ContactCta": {
+    "eyebrow": "Contact",
+    "title": "Have a project in mind? Let's build it together.",
+    "description": "If you're looking for a new website, an admin panel or help with an existing project, feel free to reach out.",
+    "button": "Get in touch"
+  },
+  "About": {
+    "meta": {
+      "title": "About",
+      "description": "About Buğrahan Umay Şafak: background, experience and way of working."
+    },
+    "Hero": {
+      "eyebrow": "About",
+      "title": "From user-focused interfaces to end-to-end products",
+      "p1": "I'm Buğrahan Umay Şafak, Umay for short. I'm a software engineer who builds fast, accessible and maintainable products with modern web technologies.",
+      "p2": "From June 2024 to July 2025, I worked remotely as a full-time Frontend Developer at getClinic, where I designed the Next.js-based frontend architecture for the company's backoffice and portal systems. Working closely with backend developers in an Agile/Scrum team, and the discipline of keeping Lighthouse scores above 95, taught me a lot.",
+      "p3": "Today I work freelance, building websites and admin panels for clients in industries such as legal, spa & wellness and education. On these projects I handle everything on my own, from frontend to backend and from server setup to launch.",
+      "portraitAlt": "Photo of Buğrahan Umay Şafak",
+      "profile": {
+        "subtitle": "Software Engineer",
+        "role": {
+          "label": "Role",
+          "value": "Full-stack Developer · frontend-leaning"
+        },
+        "focus": {
+          "label": "Focus",
+          "value": "React, Next.js, TypeScript, Node.js"
+        },
+        "experience": {
+          "label": "Experience",
+          "value": "getClinic (2024 – 2025) · Freelance"
+        },
+        "approach": {
+          "label": "Approach",
+          "value": "End-to-end ownership, from design to launch"
+        }
+      }
+    },
+    "Journey": {
+      "eyebrow": "Journey",
+      "title": "Experience",
+      "description": "From building interfaces on a product team to delivering end-to-end projects for my clients."
+    }
+  },
+  "Projects": {
+    "groups": {
+      "freelance": {
+        "title": "Freelance projects",
+        "description": "Projects where I handled design, development and launch for my clients on my own."
+      },
+      "fulltime": {
+        "title": "Full-time experience",
+        "description": "Companies where I worked as part of a product team."
+      }
+    },
+    "status": {
+      "live": "Live",
+      "evolving": "In progress",
+      "offline": "Offline"
+    },
+    "kind": {
+      "freelance": "Freelance",
+      "fulltime": "Full-time"
+    }
+  },
+  "ProjectDetail": {
+    "back": "All projects",
+    "meta": {
+      "client": "Client",
+      "role": "Role",
+      "period": "Period",
+      "sector": "Industry",
+      "location": "Location"
+    },
+    "overview": "Overview",
+    "whatIDid": "What I did",
+    "roadmap": "Roadmap",
+    "stack": "Tech stack",
+    "features": "Highlights",
+    "links": "Links",
+    "galleryEyebrow": "Screenshots",
+    "gallery": "A closer look",
+    "mobile": {
+      "eyebrow": "Mobile",
+      "title": "A consistent experience on every screen",
+      "description": "Every page was designed with mobile devices in mind, from the navigation to the call-to-action buttons."
+    },
+    "next": "Next project",
+    "galleryPrev": "Previous screenshot",
+    "galleryNext": "Next screenshot"
+  },
+  "Technologies": {
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "description": "UI development, state management, forms and validation, animation."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "API development, authentication, ORMs and real-time communication."
+      },
+      "database": {
+        "title": "Databases",
+        "description": "Relational and NoSQL databases, caching and BaaS solutions."
+      },
+      "devops": {
+        "title": "DevOps and cloud",
+        "description": "Containers, server configuration, CDN and CI/CD pipelines."
+      },
+      "tooling": {
+        "title": "Tooling and testing",
+        "description": "Version control, package managers, code quality, testing and analytics."
+      },
+      "workflow": {
+        "title": "Collaboration",
+        "description": "Atlassian products, communication and design tools, agile processes."
+      }
+    },
+    "count": "{count, plural, one {# technology} other {# technologies}}"
+  },
+  "Contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Get in touch with Buğrahan Umay Şafak about a new project or opportunity."
+    },
+    "eyebrow": "Contact",
+    "title": "Let's work together",
+    "description": "For a new project, a job opportunity or just a technical chat, you can reach me through the channels below.",
+    "channels": "Channels",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copiedToast": "Email address copied",
+    "copyFailed": "Couldn't copy, please select the address manually",
+    "visual": {
+      "to": "To:",
+      "subject": "Subject:",
+      "subjectValue": "A new project",
+      "greeting": "Hi Umay,"
+    }
+  },
+  "NotFound": {
+    "eyebrow": "404",
+    "title": "Page not found",
+    "description": "The page may have moved, or it may never have existed.",
+    "back": "Back to home"
+  },
+  "Certifications": {
+    "eyebrow": "Learning",
+    "title": "Certifications",
+    "description": "Courses I've completed in areas I keep learning in.",
+    "verify": "Verify",
+    "credentialId": "Credential ID",
+    "view": "View certificate",
+    "viewLabel": "View the {title} certificate",
+    "openPdf": "Open PDF",
+    "close": "Close",
+    "imageAlt": "{title} certificate of completion"
+  },
+  "Experience": {
+    "projects": "Projects",
+    "stack": "Tech stack"
+  },
+  "Apps": {
+    "meta": {
+      "title": "Mobile Apps",
+      "description": "Mobile apps by Buğrahan Umay Şafak. The apps I publish will be featured here; coming soon."
+    },
+    "status": "Coming soon",
+    "title": "Mobile Apps",
+    "description": "My mobile app projects and the products I publish will be featured here in the future.",
+    "note": "In the meantime, you can browse my software projects or get in touch.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Get in touch",
+    "more": "Go to the Mobile Apps page"
   }
 }

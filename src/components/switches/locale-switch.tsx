@@ -1,67 +1,48 @@
 "use client";
 
 import * as React from "react";
-import { useLocale } from "next-intl";
-import { Globe } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import type { Locale } from "@/i18n/routing";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { cn } from "@/lib/utils";
 
-const SUPPORTED_LOCALES = [
-  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
-  { code: "en", label: "English", flag: "🇬🇧" },
-] as const;
+const LOCALE_ORDER: Locale[] = ["tr", "en"];
 
-export function LocaleSwitch() {
+export function LocaleSwitch({ className }: { className?: string }) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("Common");
   const [isPending, startTransition] = React.useTransition();
 
-  const current =
-    SUPPORTED_LOCALES.find((l) => l.code === locale) ?? SUPPORTED_LOCALES[0];
-
-  const changeLocale = (nextLocale: string) => {
-    if (nextLocale === locale) return;
-
-    startTransition(() => {
-      router.replace(pathname, { locale: nextLocale });
-      router.refresh();
-    });
-  };
-
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          size="sm"
-          className="inline-flex items-center gap-2 bg-transparent"
-          disabled={isPending}
+    <ToggleGroup
+      type="single"
+      variant="outline"
+      size="sm"
+      value={locale}
+      aria-label={t("changeLanguage")}
+      disabled={isPending}
+      onValueChange={(next) => {
+        if (!next || next === locale) return;
+        startTransition(() => {
+          router.replace(pathname, { locale: next as Locale });
+        });
+      }}
+      className={cn("font-mono", className)}
+    >
+      {LOCALE_ORDER.map((code) => (
+        <ToggleGroupItem
+          key={code}
+          value={code}
+          lang={code}
+          aria-label={code === "tr" ? "Türkçe" : "English"}
+          className="h-8 px-2.5 text-[11px] uppercase data-[state=on]:bg-foreground data-[state=on]:text-background"
         >
-          <Globe className="h-4 w-4" />
-          <span className="text-xs font-medium uppercase">{current.code}</span>
-        </Button>
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent align="end">
-        {SUPPORTED_LOCALES.map((item) => (
-          <DropdownMenuItem
-            key={item.code}
-            onClick={() => changeLocale(item.code)}
-            className="flex items-center gap-2 text-sm"
-            disabled={item.code === locale}
-          >
-            <span>{item.flag}</span>
-            <span>{item.label}</span>
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+          {code}
+        </ToggleGroupItem>
+      ))}
+    </ToggleGroup>
   );
 }

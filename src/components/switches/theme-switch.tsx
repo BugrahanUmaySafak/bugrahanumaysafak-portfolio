@@ -1,54 +1,38 @@
 "use client";
 
-import * as React from "react";
-import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 import { Moon, Sun } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { useTheme } from "@/components/providers/theme-provider";
 
 export function ThemeSwitch() {
-  const { theme, resolvedTheme, systemTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
-  const effectiveTheme =
-    (theme === "system" ? systemTheme : resolvedTheme) ?? "light";
-
-  const isDark = effectiveTheme === "dark";
+  const { resolvedTheme, setTheme } = useTheme();
+  const t = useTranslations("Common");
 
   return (
-    <div className="relative inline-flex items-center">
-      <Switch
-        checked={isDark}
-        onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
-        aria-label="Toggle theme"
-        className="peer"
-      />
-
-      <Sun
-        className="
-          pointer-events-none
-          absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2
-          text-zinc-900
-          transition-opacity duration-200
-          peer-data-[state=checked]:opacity-0
-        "
-      />
-
-      <Moon
-        className="
-          pointer-events-none
-          absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2
-          text-zinc-50
-          opacity-0
-          transition-opacity duration-200
-          peer-data-[state=checked]:opacity-100
-        "
-      />
-    </div>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon-sm"
+          className="relative"
+          aria-label={t("toggleTheme")}
+          onClick={(event) => {
+            const rect = event.currentTarget.getBoundingClientRect();
+            const origin =
+              event.clientX || event.clientY
+                ? { x: event.clientX, y: event.clientY }
+                : { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+            setTheme(resolvedTheme === "dark" ? "light" : "dark", origin);
+          }}
+        >
+          <Sun className="theme-icon size-4 rotate-0 scale-100 transition-transform duration-500 dark:-rotate-90 dark:scale-0" />
+          <Moon className="theme-icon absolute size-4 rotate-90 scale-0 transition-transform duration-500 dark:rotate-0 dark:scale-100" />
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>{t("toggleTheme")}</TooltipContent>
+    </Tooltip>
   );
 }

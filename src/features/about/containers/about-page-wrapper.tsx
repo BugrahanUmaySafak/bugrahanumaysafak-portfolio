@@ -1,24 +1,32 @@
-"use client";
-
+import { useTranslations } from "next-intl";
 import { Section } from "@/components/layout/section";
+import { SectionHeading } from "@/components/layout/section-heading";
+import { ExperienceTimeline } from "@/components/experience/experience-timeline";
+import { CertificationsOverview } from "@/components/certifications/certifications-overview";
+import { ContactCta } from "@/components/cta/contact-cta";
 import { AboutHero } from "../components/about-hero";
-import { AboutBackground } from "../components/about-background";
-import { AboutWorkingStyle } from "../components/about-working-style";
 
 export function AboutPageWrapper() {
+  const t = useTranslations("About.Journey");
+
   return (
-    <>
-      <Section as="main" className="items-start pt-6 md:items-center md:pt-0">
-        <AboutHero />
+    <main>
+      <AboutHero />
+
+      <Section id="experience">
+        <div className="space-y-10 md:space-y-12">
+          <SectionHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
+          <ExperienceTimeline />
+        </div>
       </Section>
 
-      <Section className="items-start pt-6 md:items-center md:pt-0">
-        <AboutBackground />
+      <Section id="certifications" className="border-y bg-surface">
+        <CertificationsOverview />
       </Section>
 
-      <Section className="items-start pt-6 md:items-center md:pt-0">
-        <AboutWorkingStyle />
+      <Section>
+        <ContactCta />
       </Section>
-    </>
+    </main>
   );
 }
