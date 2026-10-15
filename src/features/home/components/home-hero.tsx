@@ -16,7 +16,7 @@ export function HomeHero() {
   const stats = [
     { value: String(LIVE_WEBSITE_COUNT), label: t("stats.websites") },
     { value: String(SECTOR_COUNT), label: t("stats.sectors") },
-    { value: "1+", label: t("stats.experience") },
+    { value: "2+", label: t("stats.experience") },
   ];
 
   return (
