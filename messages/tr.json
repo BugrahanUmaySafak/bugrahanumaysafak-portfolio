@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Buğrahan Umay Şafak · Software Engineer",
-    "description": "Modern web teknolojileriyle web siteleri ve yönetim panelleri geliştiren, full-stack odaklı yazılım mühendisi Buğrahan Umay Şafak'ın portföyü."
+    "title": "Buğrahan Umay Şafak · Full-Stack Developer",
+    "description": "Modern web teknolojileriyle web siteleri ve yönetim panelleri geliştiren, frontend ağırlıklı full-stack geliştirici Buğrahan Umay Şafak'ın portföyü."
   },
   "Navigation": {
     "home": "Ana sayfa",
@@ -29,7 +29,7 @@
   },
   "Home": {
     "Hero": {
-      "eyebrow": "Software Engineer · Full-stack",
+      "eyebrow": "Full-Stack Developer · Freelance",
       "greeting": "Merhaba, ben Umay",
       "intro": "Modern web teknolojileriyle hızlı, erişilebilir ve kullanıcı odaklı ürünler geliştiriyorum. getClinic'te Frontend Developer olarak çalıştım; bugün işletmeler için web sitelerini ve yönetim panellerini tasarımdan yayına kadar uçtan uca hayata geçiriyorum.",
       "ctaProjects": "Projeleri incele",
@@ -71,15 +71,15 @@
     "Hero": {
       "eyebrow": "Hakkımda",
       "title": "Kullanıcı odaklı arayüzlerden uçtan uca ürünlere",
-      "p1": "Ben Buğrahan Umay Şafak, kısaca Umay. Modern web teknolojileriyle hızlı, erişilebilir ve sürdürülebilir ürünler geliştiren bir yazılım mühendisiyim.",
+      "p1": "Ben Buğrahan Umay Şafak, kısaca Umay. Modern web teknolojileriyle hızlı, erişilebilir ve sürdürülebilir ürünler geliştiren, frontend ağırlıklı bir full-stack geliştiriciyim.",
       "p2": "Haziran 2024 – Temmuz 2025 arasında getClinic'te uzaktan ve tam zamanlı Frontend Developer olarak çalıştım. Şirketin backoffice ve portal sistemlerinin Next.js tabanlı frontend mimarisini tasarladım. Agile/Scrum ile ilerleyen ekipte backend geliştiricilerle yakın çalışmak ve Lighthouse skorlarını 95'in üzerinde tutmanın disiplini bana çok şey kattı.",
       "p3": "Bugün freelance olarak hukuk, spa & wellness ve eğitim gibi farklı sektörlerdeki müşteriler için web siteleri ve yönetim panelleri geliştiriyorum. Bu projelerde arayüzden backend'e, sunucu kurulumundan yayına kadar tüm süreci tek başıma yürütüyorum.",
       "portraitAlt": "Buğrahan Umay Şafak'ın fotoğrafı",
       "profile": {
-        "subtitle": "Software Engineer",
+        "subtitle": "Full-Stack Developer",
         "role": {
           "label": "Rol",
-          "value": "Full-stack Developer · frontend ağırlıklı"
+          "value": "Full-Stack Developer · frontend ağırlıklı"
         },
         "focus": {
           "label": "Odak",

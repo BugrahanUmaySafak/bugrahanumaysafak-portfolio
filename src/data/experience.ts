@@ -18,9 +18,9 @@ export type ExperienceItem = {
 export const EXPERIENCE: ExperienceItem[] = [
   {
     id: "freelance",
-    role: { tr: "Full-stack Developer", en: "Full-stack Developer" },
+    role: { tr: "Full-Stack Developer", en: "Full-Stack Developer" },
     company: { tr: "Freelance", en: "Freelance" },
-    period: { tr: "Devam ediyor", en: "Ongoing" },
+    period: { tr: "2025 – Günümüz", en: "2025 – Present" },
     current: true,
     description: {
       tr: "Hukuk, spa & wellness ve eğitim sektörlerindeki müşteriler için web sitelerini ve yönetim panellerini; tasarım, geliştirme, sunucu kurulumu ve yayın dahil uçtan uca tek başıma geliştiriyorum.",

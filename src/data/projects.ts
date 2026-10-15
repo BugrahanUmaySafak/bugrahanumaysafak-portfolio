@@ -47,8 +47,8 @@ export const PROJECTS: Project[] = [
     client: { tr: "Av. Alper Tuna Özkan", en: "Att. Alper Tuna Özkan" },
     sector: { tr: "Hukuk", en: "Legal" },
     role: {
-      tr: "Full-stack Developer (tek kişi)",
-      en: "Full-stack Developer (solo)",
+      tr: "Full-Stack Developer (tek kişi)",
+      en: "Full-Stack Developer (solo)",
     },
     status: "live",
     logo: { src: "/works/alpertunaozkan/logo.svg", background: "#0a1631" },
@@ -184,8 +184,8 @@ export const PROJECTS: Project[] = [
     client: { tr: "Luna Den Spa & Sports", en: "Luna Den Spa & Sports" },
     sector: { tr: "Spa & Wellness", en: "Spa & Wellness" },
     role: {
-      tr: "Full-stack Developer (tek kişi)",
-      en: "Full-stack Developer (solo)",
+      tr: "Full-Stack Developer (tek kişi)",
+      en: "Full-Stack Developer (solo)",
     },
     status: "live",
     summary: {
@@ -305,8 +305,8 @@ export const PROJECTS: Project[] = [
     client: { tr: "Kim's Spa", en: "Kim's Spa" },
     sector: { tr: "Spa & Wellness", en: "Spa & Wellness" },
     role: {
-      tr: "Full-stack Developer (tek kişi)",
-      en: "Full-stack Developer (solo)",
+      tr: "Full-Stack Developer (tek kişi)",
+      en: "Full-Stack Developer (solo)",
     },
     status: "live",
     summary: {
@@ -400,8 +400,8 @@ export const PROJECTS: Project[] = [
     client: { tr: "Akif Şencan", en: "Akif Şencan" },
     sector: { tr: "Eğitim", en: "Education" },
     role: {
-      tr: "Full-stack Developer (tek kişi)",
-      en: "Full-stack Developer (solo)",
+      tr: "Full-Stack Developer (tek kişi)",
+      en: "Full-Stack Developer (solo)",
     },
     status: "evolving",
     summary: {

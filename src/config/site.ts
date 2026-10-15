@@ -23,7 +23,7 @@ function resolveSiteUrl() {
 export const siteConfig: SiteConfig = {
   name: "Buğrahan Umay Şafak",
   shortName: "Umay",
-  title: "Software Engineer",
+  title: "Full-Stack Developer",
   url: resolveSiteUrl(),
   contact: {
     email: "bugrahanumaysafak@gmail.com",

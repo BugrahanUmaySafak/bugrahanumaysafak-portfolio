@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Buğrahan Umay Şafak · Software Engineer",
-    "description": "Portfolio of Buğrahan Umay Şafak, a full-stack-minded software engineer building websites and admin panels with modern web technologies."
+    "title": "Buğrahan Umay Şafak · Full-Stack Developer",
+    "description": "Portfolio of Buğrahan Umay Şafak, a frontend-focused full-stack developer building websites and admin panels with modern web technologies."
   },
   "Navigation": {
     "home": "Home",
@@ -29,7 +29,7 @@
   },
   "Home": {
     "Hero": {
-      "eyebrow": "Software Engineer · Full-stack",
+      "eyebrow": "Full-Stack Developer · Freelance",
       "greeting": "Hi, I'm Umay",
       "intro": "I build fast, accessible and user-focused products with modern web technologies. I worked as a Frontend Developer at getClinic; today I build websites and admin panels for businesses end to end, from design to launch.",
       "ctaProjects": "View projects",
@@ -71,15 +71,15 @@
     "Hero": {
       "eyebrow": "About",
       "title": "From user-focused interfaces to end-to-end products",
-      "p1": "I'm Buğrahan Umay Şafak, Umay for short. I'm a software engineer who builds fast, accessible and maintainable products with modern web technologies.",
+      "p1": "I'm Buğrahan Umay Şafak, Umay for short. I'm a frontend-focused full-stack developer who builds fast, accessible and maintainable products with modern web technologies.",
       "p2": "From June 2024 to July 2025, I worked remotely as a full-time Frontend Developer at getClinic, where I designed the Next.js-based frontend architecture for the company's backoffice and portal systems. Working closely with backend developers in an Agile/Scrum team, and the discipline of keeping Lighthouse scores above 95, taught me a lot.",
       "p3": "Today I work freelance, building websites and admin panels for clients in industries such as legal, spa & wellness and education. On these projects I handle everything on my own, from frontend to backend and from server setup to launch.",
       "portraitAlt": "Photo of Buğrahan Umay Şafak",
       "profile": {
-        "subtitle": "Software Engineer",
+        "subtitle": "Full-Stack Developer",
         "role": {
           "label": "Role",
-          "value": "Full-stack Developer · frontend-leaning"
+          "value": "Full-Stack Developer · frontend-leaning"
         },
         "focus": {
           "label": "Focus",

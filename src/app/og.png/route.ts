@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 
 export function GET() {
   return renderOgImage({
-    eyebrow: `${siteConfig.title} · Full-stack`,
+    eyebrow: `${siteConfig.title} · Freelance`,
     title: siteConfig.name,
     tags: getTechnologies(["nextjs", "react", "typescript", "nodejs", "tailwind"]).map(
       (tech) => tech.title
