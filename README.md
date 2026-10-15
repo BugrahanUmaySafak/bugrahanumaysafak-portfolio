@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://bugrahanumaysafak.com"><b>🌐 bugrahanumaysafak.com</b></a>
+  <a href="https://bugrahanumaysafak-portfolio.vercel.app"><b>🌐 bugrahanumaysafak-portfolio.vercel.app</b></a>
   ·
   <a href="https://www.linkedin.com/in/bugrahanumaysafak">LinkedIn</a>
   ·
@@ -23,7 +23,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/assets/home-dark.png" />
-  <img src=".github/assets/home-light.png" alt="Home page of bugrahanumaysafak.com" />
+  <img src=".github/assets/home-light.png" alt="Home page of bugrahanumaysafak-portfolio.vercel.app" />
 </picture>
 
 ## ✨ Features
@@ -96,7 +96,7 @@ No open-source license is granted: the code is public for reference only, and al
 
 ## 🇹🇷 Türkçe geliştirici notları
 
-Next.js (App Router) + next-intl + Tailwind CSS ile hazırlanmış kişisel portföy sitesi — [bugrahanumaysafak.com](https://bugrahanumaysafak.com).
+Next.js (App Router) + next-intl + Tailwind CSS ile hazırlanmış kişisel portföy sitesi — [bugrahanumaysafak-portfolio.vercel.app](https://bugrahanumaysafak-portfolio.vercel.app).
 
 
 ### Gereksinimler
@@ -159,11 +159,10 @@ Header ve footer menüsü: Hakkımda, Uygulamalar, İletişim (`src/components/h
 
 ### SEO
 
-- **Site adresi:** `src/config/site.ts` içindeki `PRODUCTION_URL` (`https://bugrahanumaysafak.com`). Canonical, hreflang, sitemap, robots, Open Graph ve yapılandırılmış veri bu adresle üretilir. Yerel geliştirmede `http://localhost:3000` kullanılır; farklı bir adres gerekirse `NEXT_PUBLIC_SITE_URL` ile ezilebilir. Vercel preview ortamları da canonical olarak production adresini gösterir.
+- **Site adresi:** `src/config/site.ts` içindeki `PRODUCTION_URL` (`https://bugrahanumaysafak-portfolio.vercel.app`). Canonical, hreflang, sitemap, robots, Open Graph ve yapılandırılmış veri bu adresle üretilir. Yerel geliştirmede `http://localhost:3000` kullanılır; farklı bir adres gerekirse `NEXT_PUBLIC_SITE_URL` ile ezilebilir. Vercel preview ortamları da canonical olarak production adresini gösterir.
 - **hreflang:** her sayfada `en`, `tr` ve `x-default` (dil önekisiz adres; ziyaretçiyi tarayıcı diline göre yönlendirir).
 - **Paylaşım görselleri:** `/og.png` (site geneli) ve `/og/projects/<slug>.png` (her proje). Ekran görüntüleri WebP olduğu ve bazı platformlar (ör. LinkedIn) WebP önizlemesini göstermediği için PNG olarak üretilir.
 - **Yapılandırılmış veri (JSON-LD):** ana sayfada `WebSite` + `Person`, Hakkımda sayfasında `ProfilePage`, proje sayfalarında `BreadcrumbList`. Yalnızca sitede görünen gerçek bilgiler kullanılır.
-- Alan adının `www` ve `www`'suz hâllerinden birinin diğerine yönlendirildiğinden emin ol (Vercel → Domains).
 
 ### Yol haritası: mobil uygulamalar ve şahıs şirketi
 

@@ -10,7 +10,7 @@ type SiteConfig = {
   };
 };
 
-const PRODUCTION_URL = "https://bugrahanumaysafak.com";
+const PRODUCTION_URL = "https://bugrahanumaysafak-portfolio.vercel.app";
 
 function resolveSiteUrl() {
   const url =
