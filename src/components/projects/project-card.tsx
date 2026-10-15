@@ -65,7 +65,7 @@ export function ProjectCard({
               {project.name}
             </Link>
           </h4>
-          <ArrowUpRight className="size-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+          <ArrowUpRight className="size-4 transition-all duration-300 md:-translate-x-1 md:opacity-0 md:group-hover:translate-x-0 md:group-hover:opacity-100" />
         </CardTitle>
 
         <CardDescription className="line-clamp-3">

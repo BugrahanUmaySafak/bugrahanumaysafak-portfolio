@@ -15,7 +15,7 @@ export function ContactPageWrapper() {
     <main>
       <Section
         pattern
-        containerClassName="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20"
+        containerClassName="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-20"
       >
         <div className="space-y-12">
           <SectionHeading as="h1" eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />
@@ -33,9 +33,9 @@ export function ContactPageWrapper() {
                   style={{ animationDelay: `${120 + index * 80}ms` }}
                 >
                   <Card className="group relative py-0 transition-[translate,border-color] duration-300 hover:-translate-y-0.5 hover:border-foreground/20 has-[a:focus-visible]:ring-[3px] has-[a:focus-visible]:ring-ring/50">
-                    <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
-                      <div className="flex min-w-0 items-center gap-4">
-                        <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border bg-background">
+                    <CardContent className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+                      <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl border bg-background sm:size-11">
                           <social.icon aria-hidden className="size-5" />
                         </span>
                         <span className="min-w-0">
@@ -48,7 +48,7 @@ export function ContactPageWrapper() {
                             {social.label}
                             <ArrowUpRight className="size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                           </a>
-                          <span className="block truncate font-mono text-sm text-muted-foreground">
+                          <span className="block truncate font-mono text-xs text-muted-foreground sm:text-sm">
                             {social.display}
                           </span>
                         </span>

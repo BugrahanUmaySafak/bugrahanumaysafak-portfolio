@@ -99,7 +99,7 @@ export function ProjectDetailWrapper({ project }: { project: Project }) {
             <Eyebrow>{tp(`kind.${project.kind}`)}</Eyebrow>
             <ProjectStatus status={project.status} />
           </div>
-          <h1 className="text-balance text-4xl font-semibold tracking-tight md:text-6xl">
+          <h1 className="text-balance wrap-break-word text-3xl font-semibold tracking-tight sm:text-4xl md:text-6xl">
             {project.name}
           </h1>
           <p className="max-w-3xl text-pretty text-lg text-muted-foreground md:text-xl">
@@ -149,7 +149,7 @@ export function ProjectDetailWrapper({ project }: { project: Project }) {
       </Section>
 
       <Section className="pt-6 md:pt-10">
-        <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-16">
           <div className="space-y-12">
             <div className="reveal space-y-4">
               <h2 className="text-2xl font-semibold tracking-tight">{t("overview")}</h2>
@@ -266,7 +266,7 @@ export function ProjectDetailWrapper({ project }: { project: Project }) {
 
             {mobileShots.length > 0 && (
               <Card className="reveal py-0">
-                <CardContent className="grid items-center gap-10 p-6 md:grid-cols-[1fr_auto] md:p-10">
+                <CardContent className="grid grid-cols-1 items-center gap-10 p-6 md:grid-cols-[1fr_auto] md:p-10">
                   <div className="max-w-md space-y-3">
                     <Eyebrow>{t("mobile.eyebrow")}</Eyebrow>
                     <h3 className="text-xl font-semibold tracking-tight md:text-2xl">
@@ -295,19 +295,19 @@ export function ProjectDetailWrapper({ project }: { project: Project }) {
         <div className="space-y-16">
           {nextProject && nextProject.slug !== project.slug && (
             <Card className="reveal group relative py-0 transition-[translate,border-color] duration-300 hover:-translate-y-0.5 hover:border-foreground/20 has-[a:focus-visible]:ring-[3px] has-[a:focus-visible]:ring-ring/50">
-              <CardContent className="flex items-center justify-between gap-6 p-6 md:p-8">
-                <div className="space-y-2">
+              <CardContent className="flex items-center justify-between gap-4 p-5 sm:gap-6 sm:p-6 md:p-8">
+                <div className="min-w-0 space-y-2">
                   <span className="block font-mono text-xs uppercase tracking-widest text-muted-foreground">
                     {t("next")}
                   </span>
                   <Link
                     href={`/projects/${nextProject.slug}`}
-                    className="block text-2xl font-semibold tracking-tight outline-none transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-brand md:text-4xl"
+                    className="block wrap-break-word text-xl font-semibold tracking-tight outline-none transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-brand sm:text-2xl md:text-4xl"
                   >
                     {nextProject.name}
                   </Link>
                 </div>
-                <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full border transition-all group-hover:border-foreground group-hover:bg-foreground group-hover:text-background">
+                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border transition-all group-hover:border-foreground group-hover:bg-foreground group-hover:text-background sm:size-12">
                   <ArrowRight className="size-5" />
                 </span>
               </CardContent>
